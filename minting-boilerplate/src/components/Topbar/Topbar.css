@@ -1,0 +1,10 @@
+.topbar {
+  width: 8em;
+  text-align: center;
+  margin: 0.5rem;
+  border-radius: 3px;
+}
+
+.topbar p {
+  padding: 0.2rem 0.5rem;
+}

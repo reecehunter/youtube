@@ -1,0 +1,53 @@
+.mint-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 400px;
+  margin: 5rem auto;
+}
+
+.mint-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.mint-container > h1 {
+  margin-bottom: 1rem;
+}
+.mint-container > p {
+  margin-bottom: 1rem;
+}
+
+.mint-container .amount span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mint-container .amount a {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.mint-container .price,
+.mint-container .total,
+.mint-container .amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 2%;
+  border-radius: 3px;
+}
+
+.mint-section {
+  position: relative;
+  overflow: hidden;
+}

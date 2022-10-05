@@ -1,0 +1,24 @@
+.modal-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.529);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.modal span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.modal span p {
+  cursor: pointer;
+}

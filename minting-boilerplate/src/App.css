@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/SF-Pro-Display-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/SF-Pro.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+button:not(.mint-container span button) {
+  padding: 0.5em 1.3em;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+a {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+a:hover {
+  transform: scale(1.3);
+}

@@ -1,0 +1,17 @@
+.popup {
+  position: absolute;
+  color: white !important;
+  padding: 1rem;
+  right: -100%;
+  top: 7px;
+  border-radius: 3px;
+  max-width: 450px;
+  transition: right 0.4s ease;
+}
+
+.popup .close {
+  position: absolute;
+  right: 5px;
+  top: 1px;
+  cursor: pointer;
+}
