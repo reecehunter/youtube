@@ -38,7 +38,7 @@ contract NFT is ERC721, Ownable {
         require(_numTokens * price <= msg.value, "Insufficient funds.");
 
         for(uint256 i = 1; i <= _numTokens; ++i) {
-            _safeMint(msg.sender, curTotalSupply + 1);
+            _safeMint(msg.sender, curTotalSupply + i);
         }
         mintedPerWallet[msg.sender] += _numTokens;
         totalSupply += _numTokens;
