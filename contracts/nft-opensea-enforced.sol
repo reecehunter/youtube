@@ -4,8 +4,9 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "contracts/DefaultOperatorFilterer.sol";
 
-contract NFT is ERC721, Ownable {
+contract NFT is ERC721, Ownable, DefaultOperatorFilterer {
     using Strings for uint256;
 
     uint public constant MAX_TOKENS = 10000;
@@ -66,16 +67,16 @@ contract NFT is ERC721, Ownable {
         require(transferOne && transferTwo, "Transfer failed.");
     }
 
-    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
- 
-        string memory currentBaseURI = _baseURI();
-        return bytes(currentBaseURI).length > 0
-            ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
-            : "";
+    // OpenSea Enforcer functions
+    function transferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.transferFrom(from, to, tokenId);
     }
- 
-    function _baseURI() internal view virtual override returns (string memory) {
-        return baseUri;
+
+    function safeTransferFrom(address from, address to, uint256 tokenId) public override onlyAllowedOperator {
+        super.safeTransferFrom(from, to, tokenId);
+    }
+
+    function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public override onlyAllowedOperator {
+        super.safeTransferFrom(from, to, tokenId, data);
     }
 }
